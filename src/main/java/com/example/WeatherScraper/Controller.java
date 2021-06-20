@@ -33,7 +33,7 @@ public class Controller {
             modelMap.put("error","Please enter a city name");
             modelMap.put("visibility1","true");
             modelMap.put("visibility2","false");
-            return "MainPage";
+            return "Mainpage";
         }
         CloseableHttpClient httpClient = HttpClients.createDefault();
         String uri = "https://api.openweathermap.org/data/2.5/weather?q="+ URLEncoder.encode(place)+"&appid=1e186d7f65344bad04966e4b5b1ad93c";

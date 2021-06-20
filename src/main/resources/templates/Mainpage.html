@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:display="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" xmlns:th="http://www.thymeleaf.org">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>WeatherScraper</title>
+
+</head>
+
+<body background="<c:url value='/resources/images/weather3.jpg>">
+<br><br>
+<center><h1>Weather Scraper App</h1></center>
+<br><br>
+<form method="post" action="">
+<center>
+    <p><input type="text" name="place" placeholder="Enter the name of the city" style="width:200px;"></p><br>
+   <p><input type="submit" name="submit" class="btn btn-primary"></p>
+</center>
+</form>
+<div class="alert alert-danger" role="alert" style="width:25%;margin-left:530px;height:250px;" th:style="${visibility1}?'display:block;width:25%;margin-left:530px;height:50px;':'display:none'" id="jj">
+    <center><p th:text="${error}"></p></center>
+</div>
+<div class="alert alert-success" role="alert" style="width:25%;margin-left:530px;height:250px;" th:style="${visibility2}?'display:block;width:25%;margin-left:530px;height:320px;':'display:none'" id="kk">
+    <div style="margin-bottom:30px;">
+    <p><h3>Today's weather:</h3></p>
+    <p>Description:&nbsp;<span th:text="${desc}"></span></p>
+    <p>Temperature:&nbsp;<span th:text="${temp}"></span>&nbsp;Fahrenheit</p>
+    <p>Max Temperature:&nbsp;<span th:text="${maxtemp}"></span>&nbsp;Fahrenheit</p>
+    <p>Minimum Temperature:&nbsp;<span th:text="${mintemp}"></span>&nbsp;Fahrenheit</p>
+    <p>Pressure:&nbsp;<span th:text="${pressure}"></span>&nbsp;Pascals</p>
+    <p>Humidity:&nbsp;<span th:text="${humidity}"></span></p>
+    </div>
+</div>
+</body>
+</html>
